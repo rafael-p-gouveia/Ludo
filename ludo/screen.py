@@ -7,10 +7,11 @@ class Screen:
     def update(self):
         self._clk.tick(FPS)
         self._window.blit(self._board, BOARD_POS)
+        self._window.blit(self._blue, BOARD_POS)
         pygame.display.flip()
 
     def _load_img(self, path, dim):
-        img = pygame.image.load(os.path.join(path)).convert()
+        img = pygame.image.load(os.path.join(path)).convert_alpha()
         img = pygame.transform.smoothscale(img, dim)
         return img
 
