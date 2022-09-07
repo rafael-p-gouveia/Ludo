@@ -1,8 +1,10 @@
-from ludo.applicaton import Application as App
+from game import Game
+
 
 def main():
-    ludo_game = App()
-    ludo_game.run()
+    game = Game()
+    game.run()
+
 
 if __name__ == "__main__":
     main()
