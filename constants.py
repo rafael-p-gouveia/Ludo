@@ -4,7 +4,7 @@ WIN_DIM  = WIDTH, HEIGHT = (510, 510)
 WIN_HEIGHT = HEIGHT
 WIN_WIDTH = WIDTH
 WIN_NAME = "L U D O !"
-FPS      = 2
+FPS      = 60
 
 ########################################################################
 
@@ -18,6 +18,25 @@ TILE_DIM  = BOARD_DIM[0] / NUM_TILES, BOARD_DIM[1] / NUM_TILES
 TILE_SIZE = TILE_DIM[0]
 
 BOARD_IMG   = "img/board.png"
+
+########################################################################
+
+# Dice Data
+
+DICE_DIM = TILE_DIM
+DICE_SIZE = DICE_DIM[0]
+
+DICE_COORDS = (BOARD_POS[0] + BOARD_DIM[0]/2 - DICE_DIM[0]/2, BOARD_POS[1] + BOARD_DIM[1]/2 - DICE_DIM[1]/2)
+DICE_SPEED = 18
+
+DICE_IMG = {
+    1 : os.path.join('img/dice_1.png'),
+    2 : os.path.join('img/dice_2.png'),
+    3 : os.path.join('img/dice_3.png'),
+    4 : os.path.join('img/dice_4.png'),
+    5 : os.path.join('img/dice_5.png'),
+    6 : os.path.join('img/dice_6.png')
+}
 
 ########################################################################
 

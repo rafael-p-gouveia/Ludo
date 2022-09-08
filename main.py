@@ -10,7 +10,7 @@ def main():
     menu = Menu(game.getWindow(), game.getClock())
     menu.title_screen_run()
     config = menu.getConfig()
-    #game.set(config)
+    game.setConfig(config)
     game.run()
 
 
