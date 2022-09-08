@@ -6,7 +6,6 @@ class Pawn:
     def draw(self, window):
         window.blit(self.img, self._tile2winpos())
 
-    # TODO verify colision, imunity etc
     def move(self, n):
         if self.idx >= self.final_idx:
             return

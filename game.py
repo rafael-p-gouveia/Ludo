@@ -1,5 +1,5 @@
 from board import Board
-from constants import FPS, GREEN, BLUE, WIN_NAME, WIN_DIM
+from constants import FPS, WIN_NAME, WIN_DIM
 import pygame
 from pawn import Pawn
 
@@ -10,30 +10,20 @@ class Game:
         self.board = Board()
         self.clk = pygame.time.Clock()
         self.running = True
-        self.green_pawns = [Pawn(GREEN, i - 4) for i in range(0, 4)]
-        self.blue_pawns = [Pawn(BLUE, i - 12) for i in range(0, 4)]
+
     
     def run(self):
-        self.green_pawns[0].spawn()
-        self.blue_pawns[2].spawn()
         while self.running:
-            self.update()
+            self.clk.tick(FPS)
+            self.board.draw(self.window)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    pos = pygame.mouse.get_pos()
+                    print(self.board.pos2tile(pos))
 
-    def update(self):
-        self.clk.tick(FPS)
-        self.board.draw(self.window)
-        for pawn in self.green_pawns:
-            pawn.draw(self.window)
-        for pawn in self.blue_pawns:
-            pawn.draw(self.window)
-        self.green_pawns[0].move(1)
-        self.blue_pawns[2].move(1)
         
-        pygame.display.flip()
-
     def getWindow(self):
             return self.window
         
