@@ -33,5 +33,10 @@ class Game:
         self.blue_pawns[2].move(1)
         
         pygame.display.flip()
+
+    def getWindow(self):
+            return self.window
         
+    def getClock(self):
+            return self.clk
 

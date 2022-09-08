@@ -1,6 +1,8 @@
 import os
 # Window Data
 WIN_DIM  = WIDTH, HEIGHT = (510, 510)
+WIN_HEIGHT = HEIGHT
+WIN_WIDTH = WIDTH
 WIN_NAME = "L U D O !"
 FPS      = 2
 
