@@ -42,10 +42,10 @@ DICE_IMG = {
 
 # Pawn Data
 
-BLUE   = 1
-RED    = 2
-YELLOW = 4
-GREEN  = 8
+BLUE   = 0
+RED    = 1
+YELLOW = 2
+GREEN  = 3
 
 PAWN_IMG = {
     BLUE  : os.path.join("img/blue_p.png"),
@@ -91,8 +91,8 @@ SPAWN_IDX2POS  = {
     -4: (117, 117),
     -5: (360, 55),  # Yellow
     -6: (422, 55),
-    -7: (55, 422),
-    -8: (422, 422),
+    -7: (360, 117),
+    -8: (422, 117),
     -9: (360, 359), # Blue
    -10: (422, 359),
    -11: (360, 421),

@@ -12,15 +12,9 @@ class Game:
         pygame.display.set_caption(WIN_NAME)
         self.board = Board()
         self.clk = pygame.time.Clock()
-        
+        self.running = True
         self.green_pawns = [Pawn(GREEN, i - 4) for i in range(0, 4)]
-        self.yellow_pawns = [Pawn(YELLOW, i - 8) for i in range(0, 4)]
         self.blue_pawns = [Pawn(BLUE, i - 12) for i in range(0, 4)]
-        self.red_pawns = [Pawn(RED, i - 16) for i in range(0, 4)]
-        #self.running = True
-        self.dice = Dice()
-        self.turn = 0
-
     
     def run(self):
         self.running = True
@@ -28,10 +22,12 @@ class Game:
         self.blue_pawns[2].spawn()
         
         while self.running:
-            self.update()
+            self.clk.tick(FPS)
+            self.board.draw(self.window)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+<<<<<<< HEAD
             self.dice.roll(self.window, self.clk)
 
     def update(self):
@@ -48,9 +44,13 @@ class Game:
         
         self.green_pawns[0].move(1)
         self.blue_pawns[2].move(1)
-        
-        pygame.display.flip()
+=======
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    pos = pygame.mouse.get_pos()
+                    print(self.board.pos2tile(pos))
 
+>>>>>>> f1947ea794cb3f2f5a9b65d15538473bbd873048
+        
     def getWindow(self):
             return self.window
         
