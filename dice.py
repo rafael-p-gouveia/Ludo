@@ -28,6 +28,8 @@ class Dice():
             timer += clk.get_time()
             self.cur_face = random.randint(0, 5)
             self.draw(window)
+            clk.tick(DICE_SPEED)
             pygame.display.flip()
+
         return self.cur_face + 1
 
