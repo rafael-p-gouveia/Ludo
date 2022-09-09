@@ -21,6 +21,25 @@ BOARD_IMG   = "img/board.png"
 
 ########################################################################
 
+# Dice Data
+
+DICE_DIM = TILE_DIM
+DICE_SIZE = DICE_DIM[0]
+
+DICE_COORDS = (BOARD_POS[0] + BOARD_DIM[0]/2 - DICE_DIM[0]/2, BOARD_POS[1] + BOARD_DIM[1]/2 - DICE_DIM[1]/2)
+DICE_SPEED = 18
+
+DICE_IMG = {
+    1 : os.path.join('img/dice_1.png'),
+    2 : os.path.join('img/dice_2.png'),
+    3 : os.path.join('img/dice_3.png'),
+    4 : os.path.join('img/dice_4.png'),
+    5 : os.path.join('img/dice_5.png'),
+    6 : os.path.join('img/dice_6.png')
+}
+
+########################################################################
+
 # Pawn Data
 
 BLUE   = 0
