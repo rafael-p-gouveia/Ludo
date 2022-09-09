@@ -48,7 +48,7 @@ class Game:
                     print(self.board.pos2tile(pos))
 
     def on_dice_click(self):
-        self.dice.roll(self.window, self.clk, 2000)
+        print(self.dice.roll(self.window, self.clk, 2000))
         pass
         
     def on_pawn_click(self, pawn):
