@@ -13,35 +13,21 @@ class Dice():
                 DICE_DIM
                 ))
         self.dice_surface = pygame.Rect(DICE_COORDS, DICE_DIM)
+        self.cur_face = 0
 
 
-    def draw(self, window, n):
-        window.blit(self.img[n], DICE_COORDS)
-
-    def roll(self, window, clock):
-        rolling = True
-        n = 0
-        while rolling:
-            
-            pressed = False
-            mx,my = pygame.mouse.get_pos()
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    exit()
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    pressed = True
-            
-            if self.dice_surface.collidepoint((mx,my)):
-                if pressed:
-                    n = random.randint(0,5)
-                    self.draw(window, n)
-                    return n
-                    
-
-            self.draw(window, n)
+    def draw(self, window):
+        window.blit(self.img[self.cur_face], DICE_COORDS)
+    
+    def is_clicked(self, pos):
+        return self.dice_surface.collidepoint(pos)
+    
+    def roll(self, window, clk, time):
+        timer = 0
+        while timer < time:
+            timer += clk.get_time()
+            self.cur_face = random.randint(0, 5)
+            self.draw(window)
             pygame.display.flip()
-            n += 1
-            n %= 6
-            clock.tick(DICE_SPEED)
+        return self.cur_face + 1
+

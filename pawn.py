@@ -20,6 +20,11 @@ class Pawn:
 
     def spawn(self):
         self.idx = 0
+
+    def is_clicked(self, pos):
+        x, y = pos
+        w, z = self._tile2winpos()
+        return x >= w and x <= w + TILE_SIZE and y >= z and y <= z + TILE_SIZE
         
     def __init__(self, color, spawn_idx) -> None:
         self.color = color
